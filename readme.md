@@ -22,6 +22,12 @@ git clone https://github.com/candypopbeat/wordpress-docker-template.git
     ./duplicator.cmd
     ```
 1. Duplicator復元インストールを進める
+    ```
+    DBホスト：db:3306
+    DB名：wordpress
+    DBユーザー：wp_user
+    DBパスワード：wp_pass
+    ```
 <br><br>
 
 # All-in-One WP Migrationから復元する方法
