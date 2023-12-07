@@ -15,13 +15,13 @@ git clone https://github.com/candypopbeat/wordpress-docker-template.git
 <br><br>
 
 # Duplicatorから復元する方法
-## Duplicatorのバックアップファイル２つを用意する
+1. Duplicatorのバックアップファイル２つを用意する
 1. duplicatorフォルダに2つを入れる
-2. duplicatorバッチファイルを起動させる
+1. duplicatorバッチファイルをコンソールから起動させる
     ```
     ./duplicator.cmd
     ```
-3. Duplicator復元インストールを進める
+1. Duplicator復元インストールを進める
 <br><br>
 
 # All-in-One WP Migrationから復元する方法
