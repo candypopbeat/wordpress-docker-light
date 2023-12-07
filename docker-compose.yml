@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: wp_pass_root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_pass
+  WordPress:
+    image: wordpress:php8.2-apache # 適宜PHPのバージョンを変更する
+    depends_on:
+      - db
+    ports:
+      - 8090:80
+    environment:
+      WORDPRESS_DB_HOST: db:3306 # localhostの代わり
+      WORDPRESS_DB_USER: wp_user # WordPress用データベース接続ユーザ名(dbの内容に合わせる)
+      WORDPRESS_DB_PASSWORD: wp_pass # WordPress用データベース接続パスワード(dbの内容に合わせる)
+      WORDPRESS_DB_NAME: wordpress # WordPress用データベース名(dbの内容に合わせる)
+      WORDPRESS_DEBUG: 1 # デバッグモードON
+    volumes:
+      - wp_data:/var/www/html
+      - ./themes:/var/www/html/wp-content/themes
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+      - db
+    ports:
+      - 9000:80
+
+volumes:
+    db_data:
+    wp_data:
