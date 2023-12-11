@@ -5,7 +5,7 @@ git clone https://github.com/candypopbeat/wordpress-docker-template.git
 ```
 ## Docker環境構築する
 1. Docker Desktop を起動させる
-2. リポジトリフォルダ内でコンテナ構築をする
+2. クローンしたリポジトリフォルダ内でコンテナ構築をする
     ```
     docker compose up
     ```
@@ -17,7 +17,7 @@ git clone https://github.com/candypopbeat/wordpress-docker-template.git
 # Duplicatorから復元する方法
 1. Duplicatorのバックアップファイル２つを用意する
 1. duplicatorフォルダに2つを入れる
-1. duplicatorバッチファイルをコンソールから起動させる
+1. duplicatorバッチファイルをコンソール（ターミナル）から起動させる
     ```
     ./duplicator.cmd
     ```
