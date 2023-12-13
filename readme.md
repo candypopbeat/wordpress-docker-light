@@ -17,6 +17,10 @@ git clone https://github.com/candypopbeat/wordpress-docker-template.git
 # Duplicatorから復元する方法
 1. Duplicatorのバックアップファイル２つを用意する
 1. duplicatorフォルダに2つを入れる
+1. duplicatorバッチファイルを調整する
+    ```
+    # コンテナ名を修正する
+    ```
 1. duplicatorバッチファイルをコンソール（ターミナル）から起動させる
     ```
     ./duplicator.cmd
