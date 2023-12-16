@@ -1,6 +1,7 @@
 version: "3.7"
 
 services:
+
   db:
     image: mysql:5.7
     volumes:
@@ -10,6 +11,8 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wp_user
       MYSQL_PASSWORD: wp_pass
+      TZ: 'Asia/Tokyo'
+
   WordPress:
     image: wordpress:php8.2-apache # 適宜PHPのバージョンを変更する
     depends_on:
@@ -17,7 +20,7 @@ services:
     ports:
       - 8090:80
     environment:
-      WORDPRESS_DB_HOST: db:3306 # localhostの代わり
+      WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wp_user # WordPress用データベース接続ユーザ名(dbの内容に合わせる)
       WORDPRESS_DB_PASSWORD: wp_pass # WordPress用データベース接続パスワード(dbの内容に合わせる)
       WORDPRESS_DB_NAME: wordpress # WordPress用データベース名(dbの内容に合わせる)
@@ -25,10 +28,17 @@ services:
     volumes:
       - wp_data:/var/www/html
       - ./themes:/var/www/html/wp-content/themes
+
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
+    image: phpmyadmin:latest
     depends_on:
       - db
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=db
+      - PMA_USER=root
+      - PMA_PASSWORD=wp_pass_root
+      - TZ=Asia/Tokyo
     ports:
       - 9000:80
 
