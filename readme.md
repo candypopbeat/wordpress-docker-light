@@ -17,10 +17,8 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
 # Duplicatorから復元する方法
 1. Duplicatorのバックアップファイル２つを用意する
 1. duplicatorフォルダに2つを入れる
-1. duplicatorバッチファイルを調整する
-    ```
-    # コンテナ名を修正する
-    ```
+1. duplicatorバッチファイル「duplicator.cmd」を調整する
+   1. 基本的にはコンテナ名の修正だけで済む
 1. duplicatorバッチファイルをコンソール（ターミナル）から起動させる
     ```
     ./duplicator.cmd
