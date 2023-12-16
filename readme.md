@@ -25,7 +25,7 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
     ```
 1. Duplicator復元インストールを進める
     ```
-    DBホスト：db:3306
+    DBホスト：db
     DB名：wordpress
     DBユーザー：wp_user
     DBパスワード：wp_pass
