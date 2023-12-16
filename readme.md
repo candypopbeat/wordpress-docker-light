@@ -10,10 +10,9 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
     ```
     docker compose up
     ```
-## Wordpressのインストールをする
+## 新規プロジェクトの場合はWordpressのインストールをする
 1. http://localhost:8090 にブラウザからアクセスする
 2. インストールを進める
-<br><br>
 
 # Duplicatorから復元する方法
 1. Duplicatorのバックアップファイル２つを用意する
@@ -31,7 +30,6 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
     DBユーザー：wp_user
     DBパスワード：wp_pass
     ```
-<br><br>
 
 # All-in-One WP Migrationから復元する方法
 インストール済みのWordpressダッシュボードから通常通りに進める
