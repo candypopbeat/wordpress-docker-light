@@ -1,7 +1,7 @@
 # インストール方法
 ## リポジトリをクローンする
 ```
-git clone https://github.com/candypopbeat/wordpress-docker-template.git
+git clone https://github.com/candypopbeat/wordpress-docker-light.git
 ```
 ## Docker環境構築する
 1. Docker Desktop を起動させる
