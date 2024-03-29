@@ -21,9 +21,9 @@ services:
       - 8090:80
     environment:
       WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress # WordPress用データベース名(dbの内容に合わせる)
       WORDPRESS_DB_USER: wp_user # WordPress用データベース接続ユーザ名(dbの内容に合わせる)
       WORDPRESS_DB_PASSWORD: wp_pass # WordPress用データベース接続パスワード(dbの内容に合わせる)
-      WORDPRESS_DB_NAME: wordpress # WordPress用データベース名(dbの内容に合わせる)
       WORDPRESS_DEBUG: 1 # デバッグモードON
     volumes:
       - wp_data:/var/www/html
