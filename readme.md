@@ -19,6 +19,10 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
 1. duplicatorフォルダに2つを入れる
 1. duplicatorバッチファイル「duplicator.cmd」を調整する
    1. 基本的にはコンテナ名の修正だけで済む
+1. MACの場合はパーミッション調整（実行権限を与える）をしないといけないかも
+    ```bash
+    chmod +x duplicator.cmd
+    ```
 1. duplicatorバッチファイルをコンソール（ターミナル）から起動させる
     ```
     ./duplicator.cmd
