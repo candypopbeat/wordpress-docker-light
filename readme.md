@@ -6,7 +6,8 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
 ```
 ## Docker環境構築する
 1. Docker Desktop を起動させる
-2. クローンしたリポジトリフォルダ内でコンテナ構築をする
+2. docker-compose.yml を調整する（PHPのバージョンなど）
+3. クローンしたリポジトリフォルダ内でコンテナ構築をする
     ```
     docker compose up
     ```
@@ -17,17 +18,17 @@ git clone https://github.com/candypopbeat/wordpress-docker-light.git
 # Duplicatorから復元する方法
 1. Duplicatorのバックアップファイル２つを用意する
 1. duplicatorフォルダに2つを入れる
-1. duplicatorバッチファイル「duplicator.cmd」を調整する
-   1. 基本的にはコンテナ名の修正だけで済む
-1. MACの場合はパーミッション調整（実行権限を与える）をしないといけないかも
+1. duplicatorファイルをWordpressコンテナに入れ込む
     ```bash
-    chmod +x duplicator.cmd
+    docker cp ./duplicator/. {Wordpressコンテナ名}:/var/www/html/
     ```
-1. duplicatorバッチファイルをコンソール（ターミナル）から起動させる
+1. パーミッションを調整する
+    ```bash
+    docker exec {Wordpressコンテナ名} chown -R www-data:www-data ./
     ```
-    ./duplicator.cmd
-    ```
-1. Duplicator復元インストールを進める
+1. Duplicatorのインストール画面にいく
+    http://localhost:8090/installer.php
+1. データベース情報を下記にして、Duplicator復元インストールを進める
     ```
     DBホスト：db
     DB名：wordpress
